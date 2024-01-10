@@ -12,7 +12,7 @@ resource "aws_vpc" "my_vpc" {
   enable_dns_support = var.dns_support     
   enable_dns_hostnames = var.dns_hostnames 
   tags = {
-    Name = "my_vpc_${random_integer.tag.id}"
+    Name = "Dev_Env_Vpc_${random_integer.tag.id}"
   }
 }
 
@@ -30,10 +30,10 @@ resource "aws_subnet" "subnet" {
   map_public_ip_on_launch = count.index < 3 ? true : false 
   tags = {
     Name = (count.index < 3
-      ? "public_subnet_${count.index + 1}_${random_integer.tag.id}"
+      ? "Dev_Env_Pub_Sub${count.index + 1}_${random_integer.tag.id}"
       : count.index < 6
-          ? "private_subnet_${count.index - 2}_${random_integer.tag.id}"
-          : "DataBase_subnet_${count.index - 5}_${random_integer.tag.id}")
+          ? "Dev_Env_Priv_Sub${count.index - 2}_${random_integer.tag.id}"
+          : "Dev_Env_DataBase_Sub${count.index - 5}_${random_integer.tag.id}")
   }
 }
 

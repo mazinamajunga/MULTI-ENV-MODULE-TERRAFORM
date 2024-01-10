@@ -21,3 +21,19 @@ module "asg" {
     ssh_ingress_port = var.ssh_port 
     http_ingress_port = var.http_port
 }
+
+module "database" {
+    source = "../MODULES/DATABASE"
+    subnet_group = module.vpc.database_subnets_id
+    subnet_group_name = var.subnet_group_name
+    identifier = var.identifier
+    allocated_storage = var.allocated_storage
+    engine = var.engine
+    engine_version = var.engine_version
+    instance_class =  var.instance_class
+    db_name =  var.db_name
+    replica_identifier =  var.replica_identifier
+    replica_instance_class = var.replica_instance_class 
+    username = var.username 
+    password = var.password
+}

@@ -13,7 +13,7 @@ resource "aws_launch_template" "asg_webserver" {
   tag_specifications {
     resource_type = var.resource_type       
     tags = {
-      Name = "asg_webserver-${var.name}" 
+      Name = "${var.name}" # Tag attached to the newly created instance from ASG.
     }
   }
 }
@@ -32,7 +32,7 @@ resource "aws_autoscaling_group" "asg_webserver" {
 
 
 resource "aws_security_group" "my_mod_sg" {
-  name        = "my_mod_sg"
+  name        = "Dev_Env_SG"
   description = "Allow inbound traffic"
   vpc_id = var.vpc_id
   ingress {
@@ -56,6 +56,6 @@ resource "aws_security_group" "my_mod_sg" {
     cidr_blocks      = [var.internet_cidr]
   }
   tags = {
-    Name = "my_mod_sg"
+    Name = "Dev_Env_SG"
   }
 }

@@ -6,17 +6,17 @@ output "vpc_id" {
 }
 
 output "public_subnets_id" {
-    value       = slice(aws_subnet.subnet[*].id, 0, 3)
+    value       = slice(aws_subnet.subnet[*].id, 0, 3)  # Extracting the list of public subnets Ids
     description = "the list of public subnet ids"
 }
 
 output "private_subnets_id" {
-    value       = slice(aws_subnet.subnet[*].id, 3, 6)
+    value       = slice(aws_subnet.subnet[*].id, 3, 6)   # Extracting the list of private subnets Ids
     description = "the list of private subnet ids"
 }
 
 output "database_subnets_id" {
-    value       = slice(aws_subnet.subnet[*].id, 6, 9)
+    value       = slice(aws_subnet.subnet[*].id, 6, 9)   # Extracting the list of database subnets Ids
     description = "the list of database subnet ids"
 }
 

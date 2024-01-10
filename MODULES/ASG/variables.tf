@@ -28,8 +28,8 @@ variable "availability_zone" {
 
 variable "name"{
     type = string
-    description = "name of the LT"   
-     default = "my_LT" 
+    description = "name of the LT for the ASG"   
+    default = "ASG_Webserver" 
 }
 
 variable "monitoring" {

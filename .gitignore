@@ -1,3 +1,5 @@
 *.tfvars
 .terraform
 .terraform.*
+db_creds.yml
+db_creds.yml.encrypted 

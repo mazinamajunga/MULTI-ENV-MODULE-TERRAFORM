@@ -10,7 +10,7 @@ variable "vpc_cidr" {
 
 variable "image_id" {
     type = string 
-    description = "the image to be used with ASG"       # region pecific
+    description = "the image to be used with ASG"       # region specific
 }
 
 variable "instance_type" {
