@@ -1,6 +1,6 @@
 # MULTI-ENV-MODULE-TERRAFORM
-SHOW CASE THE "DRY" CONCEPT
-This repo contain a terraform module to create a VPC and an Autoscaling group local module.
-THIS TERRAFORM CODE CONTAINS A MODULE TO CREATE A VPC AND AN ASG.
+SHOW CASE THE "DRY" CONCEPT,
+This repo contain a terraform module to create a VPC, an Autoscaling group, and a database local module.
+THIS TERRAFORM CODE CONTAINS A MODULE TO CREATE A VPC, AN ASG and a DATABSASE.
 IT ALSO SHOW HOW TO LEVERAGE MODULE TO CREATE RESOURCES IN MULTIPLE ENVIRONMENT 
 (DEV="us-east-2 and STG="us-east-1").
