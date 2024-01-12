@@ -121,4 +121,17 @@ variable "subnet_group_name" {
   description = "The name of the subnet group."
 }
 
+variable "database_security_group_name" {
+  type = string 
+  description = "The name of the database security group."
+}
 
+variable "database_port" {
+  type = number
+  description = "The port the database listens to."
+}
+
+variable "database_security_group_tags" {
+  type = string
+  description = "The tag of the database security group."
+}

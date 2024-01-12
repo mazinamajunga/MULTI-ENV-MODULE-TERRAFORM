@@ -36,4 +36,9 @@ module "database" {
     replica_instance_class = var.replica_instance_class 
     username = var.username 
     password = var.password
+    vpc_id = module.vpc.vpc_id
+    asg_security_group_id = module.asg.asg_security_group_id
+    database_security_group_name = var.database_security_group_name
+    database_port = var.database_port
+    database_security_group_tags = var.database_security_group_tags
 }
