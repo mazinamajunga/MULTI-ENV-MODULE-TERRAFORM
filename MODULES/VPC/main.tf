@@ -27,7 +27,7 @@ resource "aws_subnet" "subnet" {
   count.index < 6 ? element(data.aws_availability_zones.my_az.names, count.index - 3) : 
   element(data.aws_availability_zones.my_az.names, count.index - 6))
   # Indicates whether instances launched in this subnet should be assigned a public IP address or not.
-  map_public_ip_on_launch = count.index < 3 ? true : false 
+  map_public_ip_on_launch = count.index < 3 ? true : false # tfsec:ignore:aws-ec2-no-public-ip-subnet
   tags = {
     Name = (count.index < 3
       ? "Dev_Env_Pub_Sub${count.index + 1}_${random_integer.tag.id}"

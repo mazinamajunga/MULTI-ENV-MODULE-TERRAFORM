@@ -9,11 +9,6 @@ variable "subnet_group_name" {
   description = "The name of the subnet group."
 }
 
-# variable "secret" {
-#   type        = string
-#   description = "Name of the secret in AWS KMS."
-# }
-
 variable "username" {
   type = string 
   sensitive = true 
@@ -26,24 +21,37 @@ variable "password" {
   description = "The master password of the database. May show up in plain text in the log"
 }
 
-# variable "payload" {
-#   type        = string
-#   sensitive   = true
-#   description = "Base64-encoded payload to be decrypted by KMS."
-# }
+variable "vpc_id"{
+    type = string
+    description = "the id of the vpc"     
+}
 
-# variable "payload" {
-#     type = string 
-#     sensitive = true
-#     description = "Value return from KMS encrypt operation."
-#     # default = file("C:\\Users\\patri\\OneDrive\\Documents\\Devops\\ESSAI\\db_creds.yml.encrypted") # Full path to the encrypted file.
-# }
+variable "asg_security_group_id" {
+  type = string
+  description = "The Id of the security group of the ASG"
+  
+}
 
-# variable "secret" {
-#     type = string
-#     description = "The name of the secret or unencrypted file(no extension) with the credentials of the database."
-#     default = "db_creds"
-# }
+variable "database_security_group_name" {
+  type = string 
+  description = "The name of the database security group."
+}
+
+variable "database_security_group_description" {
+  type = string 
+  description = "The description of the database security group."
+  default = "Allow traffic to the database from the business tier."
+}
+
+variable "database_port" {
+  type = number
+  description = "The port the database listens to."
+}
+
+variable "database_security_group_tags" {
+  type = string
+  description = "The tag of the database security group."
+}
 
 variable "identifier" {
   type = string
