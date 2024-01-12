@@ -1,6 +1,6 @@
 
 resource "aws_s3_bucket" "my_tfsec_bucket" {
-  bucket = var.bucket_name   # "my-tfsec-bucket"
+  bucket = var.bucket_name   
   tags = {
     Name        = "My bucket"
     Environment = "Dev"
